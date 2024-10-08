@@ -31,35 +31,7 @@ body b {
 }
 
 
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
-  -webkit-appearance: none;
-}
 
-textarea,
-input[type="text"],
-input[type="button"],
-input[type="submit"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border-radius: 0;
-}
-
-
-input:focus,
-input:focus-visible,
-input:focus::after,
-input:focus-visible::after {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-input {
-  outline: none;
-  border: 0;
-}
 
 main {
   min-height: calc(max(calc(100vh - 614px), 350px));
@@ -95,7 +67,35 @@ li {
 /// INPUTS
 /////////////////////
 
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
 
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
+}
+
+
+input:focus,
+input:focus-visible,
+input:focus::after,
+input:focus-visible::after {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+input {
+  outline: none;
+  border: 0;
+}
 
 /////////////////////
 /// BUTTONS
@@ -166,6 +166,10 @@ a {
 /// ICONS
 /////////////////////
 
+.icon-wrapper {
+  @include flexCenterBetween;
+  @include iconWithBG;
+}
 
 /////////////////////
 /// OTHERS
@@ -197,8 +201,26 @@ h1 {
       font-size: 32px;
     }
   }
+}
 
+.logo {
+  text-transform: uppercase;
 
+  span {
+    color: $prime;
+    font-weight: 700;
+  }
+}
+
+.phone {
+  display: grid;
+  a {
+    color: $prime;
+  }
+
+  p {
+    color: $grey;
+  }
 }
 
 

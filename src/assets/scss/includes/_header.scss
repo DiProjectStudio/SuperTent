@@ -29,7 +29,6 @@
   }
 
   &-logo {
-    text-transform: uppercase;
 
     @include breakpoint(md) {
       font-size: 28px;
@@ -42,11 +41,6 @@
     @include breakpoint(xl) {
       font-size: 36px;
       margin-right: 67px;
-    }
-
-    span {
-      color: $prime;
-      font-weight: 700;
     }
   }
 
@@ -88,16 +82,6 @@
         gap: 12px;
       }
 
-      .social-item {
-        @include breakpoint(lg) {
-          width: 48px;
-          height: 48px;
-          background: $grey-2;
-          padding: 12px;
-          border-radius: 10px;
-        }
-
-      }
     }
   }
 
@@ -124,15 +108,6 @@
     .reviews__company-items {
       @include flexAlignCenter;
       gap: 12px;
-
-      .company-item {
-        @include flexCenterBetween;
-        width: 48px;
-        height: 48px;
-        padding: 12px;
-        background: $grey-2;
-        border-radius: 10px;
-      }
     }
 
   }
@@ -151,7 +126,6 @@
 
     a {
       font-size: 14px;
-      color: $prime;
       padding: 6px;
 
       @include breakpoint(md) {
@@ -175,7 +149,6 @@
 
       @include breakpoint(lg) {
         display: block;
-        color: $grey;
       }
     }
   }

@@ -3,7 +3,7 @@ block header
         .container
             .header__inner
                 .header__top
-                    a(href='/').header__top-logo
+                    a(href='/').header__top-logo.logo
                         span super
                         | tent
                     .header__top-contacts
@@ -11,22 +11,22 @@ block header
                             p Всегда на связи!
                             p Работаем без выходных
                         .contacts__social-items
-                            a(href='javascript:void(0)').social-item
+                            a(href='javascript:void(0)').social-item.icon-wrapper
                                 include ../assets/images/icon_whatsapp.svg
-                            a(href='javascript:void(0)').social-item
+                            a(href='javascript:void(0)').social-item.icon-wrapper
                                 include ../assets/images/icon_telegram.svg
                     .header__top-reviews
                         .reviews__text Отзывы<span>&nbsp;о нас </span>:
 
 
                         .reviews__company-items
-                            a(href='javascript:void(0)').company-item
+                            a(href='javascript:void(0)').company-item.icon-wrapper
                                 include ../assets/images/icon_google.svg
-                            a(href='javascript:void(0)').company-item
+                            a(href='javascript:void(0)').company-item.icon-wrapper
                                 include ../assets/images/icon_double-gis.svg
-                            a(href='javascript:void(0)').company-item
+                            a(href='javascript:void(0)').company-item.icon-wrapper
                                 include ../assets/images/icon_yandex.svg
-                    .header__top-phone
+                    .header__top-phone.phone
                         a(href='tel:79777775566') +7(977)-777-55-66
                         p Казань и респ. Татарстан
                     .header__top-request

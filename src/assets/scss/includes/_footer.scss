@@ -1,0 +1,37 @@
+.footer {
+
+
+
+}
+
+.footer__top-contacts {
+  .footer__logo {
+    font-size: 32px;
+  }
+
+  .footer__phone {
+    gap: 8px;
+    a {
+      font-size: 24px;
+    }
+  }
+
+  .footer__mail, .footer__address {
+    font-size: 18px;
+  }
+
+  .footer__social-items {
+    @include flexAlignCenter;
+    gap: 12px;
+    .social-item {
+      @include flexAlignCenter;
+      gap: 8px;
+      padding: 12px 24px 12px 16px;
+    }
+  }
+
+  .footer-reviews {
+    @include flexAlignCenter;
+    gap: 12px;
+  }
+}
