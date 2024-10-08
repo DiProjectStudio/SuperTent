@@ -1,0 +1,307 @@
+.header {
+  padding: 24px 0;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+.header__top {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: space-between;
+  align-items: center;
+
+  @include breakpoint(md) {
+    grid-template-columns: 1fr 1fr auto;
+    justify-content: unset;
+  }
+
+  @include breakpoint(lg) {
+    grid-template-columns: repeat(5, auto);
+    gap: 24px;
+  }
+
+  @include breakpoint(xl) {
+    gap: 48px;
+  }
+
+  &-logo {
+    text-transform: uppercase;
+
+    @include breakpoint(md) {
+      font-size: 28px;
+    }
+
+    @include breakpoint(lg) {
+      margin-right: 100px;
+    }
+
+    @include breakpoint(xl) {
+      font-size: 36px;
+      margin-right: 67px;
+    }
+
+    span {
+      color: $prime;
+      font-weight: 700;
+    }
+  }
+
+  &-contacts {
+    display: none;
+
+    @include breakpoint(lg) {
+      @include flexAlignCenter;
+      gap: 24px;
+    }
+
+    @include breakpoint(xl) {
+
+    }
+
+
+    .contacts__text {
+      display: none;
+
+      @include breakpoint(xl) {
+        display: block;
+
+        p {
+          &:first-child {
+            color: $black;
+            margin-bottom: 2px;
+          }
+
+          &:last-child {
+            color: $grey;
+          }
+        }
+      }
+    }
+
+    .contacts__social-items {
+      @include breakpoint(lg) {
+        @include flexAlignCenter;
+        gap: 12px;
+      }
+
+      .social-item {
+        @include breakpoint(lg) {
+          width: 48px;
+          height: 48px;
+          background: $grey-2;
+          padding: 12px;
+          border-radius: 10px;
+        }
+
+      }
+    }
+  }
+
+  &-reviews {
+    display: none;
+
+    @include breakpoint(lg) {
+      @include flexAlignCenter;
+      gap: 12px;
+    }
+
+    .reviews__text {
+      span {
+        @include breakpoint(lg) {
+          display: none;
+        }
+
+        @include breakpoint(xl) {
+          display: inline-block;
+        }
+      }
+    }
+
+    .reviews__company-items {
+      @include flexAlignCenter;
+      gap: 12px;
+
+      .company-item {
+        @include flexCenterBetween;
+        width: 48px;
+        height: 48px;
+        padding: 12px;
+        background: $grey-2;
+        border-radius: 10px;
+      }
+    }
+
+  }
+
+  &-phone {
+    @include breakpoint(md) {
+      margin-right: 12px;
+      justify-self: flex-end;
+    }
+
+    @include breakpoint(lg) {
+      display: grid;
+      justify-items: center;
+      margin-right: 0;
+    }
+
+    a {
+      font-size: 14px;
+      color: $prime;
+      padding: 6px;
+
+      @include breakpoint(md) {
+        font-weight: 600;
+      }
+
+      @include breakpoint(lg) {
+        font-size: 18px;
+        font-weight: 500;
+        padding: 8px 24px;
+      }
+
+      @include breakpoint(xl) {
+        padding: 0;
+        font-size: 24px;
+      }
+    }
+
+    p {
+      display: none;
+
+      @include breakpoint(lg) {
+        display: block;
+        color: $grey;
+      }
+    }
+  }
+
+  &-request {
+    display: none;
+
+    @include breakpoint(md) {
+      display: block;
+      justify-self: flex-end;
+    }
+
+    a {
+      padding: 12px;
+      width: fit-content;
+
+      @include breakpoint(lg) {
+        padding: 13px 32px;
+        margin-bottom: 6px;
+      }
+    }
+  }
+}
+
+.header__bottom {
+  @include flexCenterBetween;
+  gap: 6px;
+
+  @include breakpoint(md) {
+    gap: 24px;
+  }
+
+  &-catalog-btn {
+    padding: 12px;
+    height: 48px;
+
+    span {
+      display: none;
+
+      @include breakpoint(md) {
+        display: block;
+      }
+    }
+  }
+
+  &-nav {
+    display: none;
+
+    @include breakpoint(lg) {
+      display: block;
+    }
+
+    ul {
+      @include flexAlignCenter;
+      gap: 26px;
+
+      @include breakpoint(xl) {
+        margin: 0 12px;
+      }
+
+      a {
+        font-weight: 400;
+        color: $grey;
+        @include flexAlignCenter;
+        gap: 8px;
+
+        &.dropdown {
+          &:after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: url("/assets/images/icon_arrow-down.svg");
+          }
+        }
+      }
+    }
+  }
+
+  &-search {
+    position: relative;
+    width: 100%;
+    height: 48px;
+
+    input {
+      padding: 14px 16px;
+      font-size: 14px;
+      background: $grey-2;
+      border-radius: 10px;
+      width: 100%;
+      line-height: 140%;
+      height: 100%;
+
+      &::placeholder {
+        font-size: 14px;
+        color: $grey;
+        font-weight: 400;
+        line-height: 140%;
+      }
+    }
+
+    svg {
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      transform: translateY(-50%);
+    }
+  }
+
+  &-works {
+    color: $grey;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    @include flexColumn;
+    @include flexCenterCenter;
+    gap: 2px;
+    line-height: 140%;
+    flex-shrink: 0;
+
+    &:before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      display: block;
+      background: url("/assets/images/icon_works.svg");
+    }
+  }
+}

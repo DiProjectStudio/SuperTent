@@ -1,0 +1,54 @@
+block header
+    header#header.header
+        .container
+            .header__inner
+                .header__top
+                    a(href='/').header__top-logo
+                        span super
+                        | tent
+                    .header__top-contacts
+                        .contacts__text
+                            p Всегда на связи!
+                            p Работаем без выходных
+                        .contacts__social-items
+                            a(href='javascript:void(0)').social-item
+                                include ../assets/images/icon_whatsapp.svg
+                            a(href='javascript:void(0)').social-item
+                                include ../assets/images/icon_telegram.svg
+                    .header__top-reviews
+                        .reviews__text Отзывы<span>&nbsp;о нас </span>:
+
+
+                        .reviews__company-items
+                            a(href='javascript:void(0)').company-item
+                                include ../assets/images/icon_google.svg
+                            a(href='javascript:void(0)').company-item
+                                include ../assets/images/icon_double-gis.svg
+                            a(href='javascript:void(0)').company-item
+                                include ../assets/images/icon_yandex.svg
+                    .header__top-phone
+                        a(href='tel:79777775566') +7(977)-777-55-66
+                        p Казань и респ. Татарстан
+                    .header__top-request
+                        a(href='javascript:void(0)').btn.btn--transparent Оставить заявку
+                .header__bottom
+                    .header__bottom-catalog-btn.btn.btn--default
+                        span Каталог
+                        include ../assets/images/icon_burger.svg
+                    .header__bottom-nav
+                        nav
+                            ul
+                                li
+                                    a(href='javascript:void(0)').dropdown Шатры
+                                li
+                                    a(href='javascript:void(0)').dropdown  Мебель
+                                li
+                                    a(href='javascript:void(0)').dropdown  Сцены
+                                li
+                                    a(href='javascript:void(0)') Кейтеринг
+                    .header__bottom-search
+                        input(type='search' placeholder='Поиск по сайту')
+                        include ../assets/images/icon_search.svg
+                    .header__bottom-works Наши работы
+
+
