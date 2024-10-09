@@ -144,3 +144,189 @@
     }
   }
 }
+
+.about {
+
+  &__inner {
+    position: relative;
+  }
+
+  &__title {
+    @include breakpoint(lg) {
+      @include columCountMaxWidth(4);
+    }
+  }
+}
+
+.about__text {
+  padding: 32px 16px;
+  background: $grey-2;
+  border-radius: 20px;
+  margin-bottom: 16px;
+
+  @include breakpoint(md) {
+    padding: 32px;
+  }
+
+  @include breakpoint(lg) {
+    padding: 48px 32px;
+    @include columCountWidth(8);
+  }
+
+  &-title {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  ul {
+    @include breakpoint(md) {
+      column-count: 2;
+    }
+
+  }
+}
+
+.about__image {
+  border-radius: 20px;
+  overflow: hidden;
+  isolation: isolate;
+
+  @include breakpoint(lg) {
+    position: absolute;
+    width: 580px;
+    height: 360px;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+}
+
+.tents {
+  &__top {
+    @include flexCenterBetween;
+    margin-bottom: 24px;
+
+    @include breakpoint(md) {
+      margin-bottom: 32px;
+    }
+
+    @include breakpoint(lg) {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0;
+  }
+}
+
+.tents__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 165px;
+  gap: 10px;
+
+  @include breakpoint(md) {
+    grid-auto-rows: 275px;
+  }
+
+  @include breakpoint(lg) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  @include breakpoint(xl) {
+    grid-auto-rows: 385px;
+  }
+}
+
+.tents__item-card {
+  border-radius: 10px;
+  border: 1px solid $grey-3;
+  background: $white;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.08);
+  display: grid;
+  justify-items: center;
+  position: relative;
+
+  @include breakpoint(md) {
+    border-radius: 20px;
+  }
+
+  @include breakpoint(xl) {
+    border-radius: 40px;
+  }
+
+  &:nth-child(3){
+    grid-column: 3 / 5;
+  }
+
+  &:nth-child(4) {
+    grid-column: 1 / 3;
+  }
+
+  &.hovered {
+
+  }
+
+  .item-card__image {
+    scale: .9;
+    max-width: 142px;
+    height: auto;
+    align-self: flex-end;
+
+    @include breakpoint(md) {
+      max-width: 227px;
+    }
+
+    @include breakpoint(lg) {
+      max-width: 260px;
+    }
+
+    @include breakpoint(xl) {
+      max-width: 352px;
+    }
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  .item__card__text {
+    font-size: 14px;
+    font-weight: 400;
+    align-self: flex-end;
+    padding-bottom: 12px;
+
+    @include breakpoint(md) {
+      font-size: 16px;
+      padding-bottom: 16px;
+    }
+
+    @include breakpoint(xl) {
+      font-size: 24px;
+      padding-bottom: 24px;
+    }
+  }
+}
+
+.card-info {
+  position: absolute;
+  bottom: -100px; /* Начальная позиция за пределами карточки */
+  opacity: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 23px 0 30px;
+  transition: transform 0.3s;
+
+  @include breakpoint(xl) {
+    font-size: 24px;
+    border-radius: 0 0 40px 40px;
+  }
+}
+
+.tents__item-card:hover .card-info {
+  bottom: 0;
+  opacity: 1
+}

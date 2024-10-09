@@ -183,3 +183,10 @@ $hd: 1920px;
     border-radius: 10px;
 }
 
+@mixin columCountWidth($count) {
+    width: calc((100vw - var(--container) * 2) / 12 * $count);
+}
+@mixin columCountMaxWidth($count) {
+    width: calc((100vw - var(--container) * 2) / 12 * $count);
+}
+

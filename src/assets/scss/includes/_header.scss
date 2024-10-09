@@ -222,6 +222,13 @@
         color: $grey;
         @include flexAlignCenter;
         gap: 8px;
+        transition: $transition;
+
+        &:hover {
+          color: $prime;
+        }
+
+
 
         &.dropdown {
           &:after {
@@ -230,6 +237,11 @@
             width: 20px;
             height: 20px;
             background: url("/assets/images/icon_arrow-down.svg");
+            transition: $transition;
+          }
+
+          &:hover::after {
+            background: url("/assets/images/icon_arrow-down--green.svg");
           }
         }
       }

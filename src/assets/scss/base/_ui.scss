@@ -162,6 +162,15 @@ a {
   display: inline-block;
 }
 
+.link {
+  color: $prime;
+  transition: $transition;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 
 /////////////////////
 /// ICONS
@@ -170,6 +179,11 @@ a {
 .icon-wrapper {
   @include flexCenterCenter;
   @include iconWithBG;
+   svg, img {
+     flex-shrink: 0;
+     width: 26px;
+     height: 26px;
+   }
 }
 
 /////////////////////
@@ -239,6 +253,50 @@ h1 {
   p {
     color: $grey;
   }
+}
+
+.section-title {
+  font-size: 24px;
+  margin-bottom: 24px;
+
+  @include breakpoint(md) {
+    margin-bottom: 32px;
+  }
+
+  @include breakpoint(lg) {
+    font-size: 28px;
+    margin-bottom: 48px;
+  }
+
+  @include breakpoint(xl) {
+    font-size: 32px;
+  }
+}
+
+.custom-list {
+  margin-top: 24px;
+  li {
+    @include flexAlignCenter;
+    gap: 16px;
+
+    &:before {
+      content: '';
+      background: $prime;
+      width: 8px;
+      height: 8px;
+      flex-shrink: 0;
+      display: block;
+      border-radius: 50%;
+    }
+
+    & + li {
+      margin-top: 16px;
+    }
+  }
+}
+
+p + p {
+  margin-top: 20px;
 }
 
 

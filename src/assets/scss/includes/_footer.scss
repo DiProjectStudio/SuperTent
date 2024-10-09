@@ -1,5 +1,13 @@
 .footer {
+  padding-top: 48px;
 
+  @include breakpoint(md) {
+    padding-top: 64px;
+  }
+
+  @include breakpoint(lg) {
+    padding-top: 96px;
+  }
   &__top {
 
     @include breakpoint(lg) {
