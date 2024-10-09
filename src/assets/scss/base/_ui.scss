@@ -108,6 +108,7 @@ input {
   flex-shrink: 0;
   cursor: pointer;
   transition: $transition;
+  width: fit-content;
 
   &.btn--default {
     background: $prime;
@@ -167,13 +168,25 @@ a {
 /////////////////////
 
 .icon-wrapper {
-  @include flexCenterBetween;
+  @include flexCenterCenter;
   @include iconWithBG;
 }
 
 /////////////////////
 /// OTHERS
 /////////////////////
+
+section + section {
+  margin-top: 48px;
+
+  @include breakpoint(md) {
+    margin-top: 64px;
+  }
+
+  @include breakpoint(lg) {
+    margin-top: 96px;
+  }
+}
 
 
 /////////////////////
@@ -187,6 +200,7 @@ a {
 
 h1 {
   font-size: 28px;
+  font-weight: 500;
 
   @include breakpoint(lg) {
     font-size: 36px;
@@ -199,6 +213,10 @@ h1 {
   &.main-title {
     @include breakpoint(lg) {
       font-size: 32px;
+    }
+
+    @include breakpoint(xl) {
+      font-size: 42px;
     }
   }
 }

@@ -1,28 +1,93 @@
 .footer {
 
+  &__top {
 
-
+    @include breakpoint(lg) {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+  }
 }
 
 .footer__top-contacts {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 24px;
+
+  @include breakpoint(md) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, auto);
+    margin-bottom: 32px;
+  }
+
+  @include breakpoint(lg) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    margin-bottom: 0;
+  }
+
+  @include breakpoint(xl) {
+    gap: 24px;
+  }
+
   .footer__logo {
     font-size: 32px;
+
+    @include breakpoint(md) {
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+    }
+
+    @include breakpoint(lg) {
+      margin-bottom: 8px;
+    }
+
+    @include breakpoint(xl) {
+      margin-bottom: 0;
+    }
   }
 
   .footer__phone {
     gap: 8px;
+
+    @include breakpoint(md) {
+      grid-row: 2 / 3;
+      grid-column: 1 / 2;
+    }
+
     a {
       font-size: 24px;
+
+      @include breakpoint(lg) {
+        font-size: 18px;
+      }
     }
   }
 
   .footer__mail, .footer__address {
     font-size: 18px;
+    grid-column: 1 / 2;
   }
 
   .footer__social-items {
     @include flexAlignCenter;
     gap: 12px;
+
+    @include breakpoint(md) {
+      grid-column: 1 / 2;
+    }
+
+    @include breakpoint(lg) {
+      flex-direction: column;
+      align-items: normal;
+    }
+
+    @include breakpoint(xl) {
+      flex-direction: row;
+      align-items: center;
+    }
+
     .social-item {
       @include flexAlignCenter;
       gap: 8px;
@@ -33,5 +98,93 @@
   .footer-reviews {
     @include flexAlignCenter;
     gap: 12px;
+
+    @include breakpoint(md) {
+      grid-column: 2 / 3;
+    }
+
+    @include breakpoint(lg) {
+      grid-column: 1 / 2;
+      flex-direction: column;
+      align-items: normal;
+    }
+
+    @include breakpoint(xl) {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .reviews__company-items {
+      @include flexAlignCenter;
+      gap: 8px;
+    }
+  }
+}
+
+.footer__top-block {
+  display: grid;
+  gap: 12px;
+
+  @include breakpoint(md) {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @include breakpoint(lg) {
+    display: block;
+    column-count: 3;
+    column-gap: 20px;
+  }
+
+  @include breakpoint(xl) {
+    column-gap: 60px;
+  }
+
+  li {
+    padding: 9px 12px;
+
+    & + li {
+      margin-top: 12px;
+    }
+    a {
+
+    }
+  }
+}
+
+.footer__bottom {
+  display: grid;
+  gap: 24px;
+  margin-top: 24px;
+  justify-items: center;
+  padding-bottom: 30px;
+
+  @include breakpoint(md) {
+    @include flexCenterBetween;
+    padding-bottom: 38px;
+    margin-top: 32px;
+  }
+
+  @include breakpoint(lg) {
+    margin-top: 36px;
+    padding-bottom: 54px;
+  }
+
+  @include breakpoint(xl) {
+    margin-top: 30px;
+  }
+
+  .footer__title {
+    color: $grey;
+  }
+
+  .footer__devs {
+    a {
+      color: $grey;
+    }
+
+    span {
+      color: $prime;
+      text-transform: uppercase;
+    }
   }
 }

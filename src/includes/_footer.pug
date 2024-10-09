@@ -22,56 +22,51 @@ block footer
                         .footer-reviews
                             .reviews__text Отзывы о нас:
                             .reviews__company-items
-                                a(href='javascript:void(0)').company-item
-                                    include ../assets/images/icon_google.svg
-                                a(href='javascript:void(0)').company-item
-                                    include ../assets/images/icon_double-gis.svg
-                                a(href='javascript:void(0)').company-item
-                                    include ../assets/images/icon_yandex.svg
-                    //ul.footer__top-block
-                    //    li
-                    //        a(href='javascript:void(0)') Шатры
-                    //    li
-                    //        a(href='javascript:void(0)') Мебель
-                    //    li
-                    //        a(href='javascript:void(0)') Сцены и подиумы
-                    //    li
-                    //        a(href='javascript:void(0)') Звуковое оборудование
-                    //    li
-                    //        a(href='javascript:void(0)') Световое оборудование
-                    //    li
-                    //        a(href='javascript:void(0)') Экраны и видеооборудование
-                    //    li
-                    //        a(href='javascript:void(0)') Техническое оборудование
-                    //    li
-                    //        a(href='javascript:void(0)') Оформление и декорации
-                    //    li
-                    //        a(href='javascript:void(0)') Дополнительно
-                    //    li
-                    //        a(href='javascript:void(0)') Кейтеринг
-                    //    li
-                    //        a(href='javascript:void(0)') Оборудование для кейтеринга
-                    //    li
-                    //        a(href='javascript:void(0)') Текстиль
-                    //    li
-                    //
-                    //        a(href='javascript:void(0)') Стойки, витрины и стелажи
-                    //    li
-                    //
-                    //        a(href='javascript:void(0)') БИО туалеты
-                    //    li
-                    //
-                    //        a(href='javascript:void(0)') Ограждения
-                    //    li
-                    //
-                    //        a(href='javascript:void(0)') Флагштоки и брендирование
+                                a(href='javascript:void(0)').company-item.icon-wrapper
+                                    +img('icon_google.svg')
+                                a(href='javascript:void(0)').company-item.icon-wrapper
+                                    +img('icon_double-gis.svg')
+                                a(href='javascript:void(0)').company-item.icon-wrapper
+                                    +img('icon_yandex.svg')
+                    ul.footer__top-block
+                        li
+                            a(href='javascript:void(0)') Шатры
+                        li
+                            a(href='javascript:void(0)') Мебель
+                        li
+                            a(href='javascript:void(0)') Сцены и подиумы
+                        li
+                            a(href='javascript:void(0)') Звуковое оборудование
+                        li
+                            a(href='javascript:void(0)') Световое оборудование
+                        li
+                            a(href='javascript:void(0)') Экраны и видеооборудование
+                        li
+                            a(href='javascript:void(0)') Техническое оборудование
+                        li
+                            a(href='javascript:void(0)') Оформление и декорации
+                        li
+                            a(href='javascript:void(0)') Дополнительно
+                        li
+                            a(href='javascript:void(0)') Кейтеринг
+                        li
+                            a(href='javascript:void(0)') Оборудование для кейтеринга
+                        li
+                            a(href='javascript:void(0)') Текстиль
+                        li
+                            a(href='javascript:void(0)') Стойки, витрины и стелажи
+                        li
+                            a(href='javascript:void(0)') БИО туалеты
+                        li
+                            a(href='javascript:void(0)') Ограждения
+                        li
+                            a(href='javascript:void(0)') Флагштоки и брендирование
 
 
-                //.footer__bottom
-                //    .footer__policy
-                //        a(href="policy.html").footer__title.link.link--white-opacity Политика конфиденциальности
-                //
-                //    .footer__devs
-                //        a(href="https://di-project.studio/") Разработка сайта:
-                //        span  Di-Project.Studio
-                //    .footer__company
+                .footer__bottom
+                    .footer__policy
+                        a(href="policy.html").footer__title.link.link--white-opacity Политика конфиденциальности
+
+                    .footer__devs
+                        a(href="https://di-project.studio/") Разработка сайта
+                        span  Di-Project.Studio
