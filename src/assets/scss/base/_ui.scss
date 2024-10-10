@@ -134,17 +134,17 @@ input {
     color: $prime;
 
     &:hover {
-      background: $btn-hover;
+      background: transparent;
       color: $btn-hover;
     }
 
     &:active {
-      background: $btn-active;
+      background: transparent;
       color: $btn-active;
     }
 
     &:disabled {
-      background: $grey-3;
+      background: transparent;
       color: $grey-3;
     }
   }
@@ -248,6 +248,10 @@ h1 {
   display: grid;
   a {
     color: $prime;
+    transition: $transition;
+    &:hover {
+      color: $btn-hover;
+    }
   }
 
   p {

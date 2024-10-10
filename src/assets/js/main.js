@@ -10,24 +10,45 @@ $(document).ready(function () {
             return pastedValue.replace(/^8/, '');
         }
     });
-    // moveElementsInFooter();
+
+    advantagesAction();
 });
 
-// function moveElementsInFooter() {
-//     const ulElement = document.querySelector('ul.footer__top-block');
-//     const liElements = ulElement.querySelectorAll('li');
-//     const elementsToMove = 6;
-//     let footerJsBlock;
-//
-//     liElements.forEach((element, index) => {
-//         if ((index + 1) % elementsToMove === 0) {
-//             footerJsBlock = document.createElement('div');
-//             footerJsBlock.appendChild(element);
-//             ulElement.appendChild(footerJsBlock);
-//         }
-//
-//         footerJsBlock.appendChild(element);
-//
-//     });
-//
-// }
+function advantagesAction() {
+    const iconItems = document.querySelectorAll('.advantages__icon-items .icon-item');
+    const cardItems = document.querySelectorAll('.advantages__card-items .card-item');
+
+    if (iconItems && iconItems.length > 0) {
+        iconItems.forEach((iconItem) => {
+            iconItem.addEventListener('click', function () {
+                // Проверяем, активен ли элемент
+                const isActive = iconItem.classList.contains('active');
+                const dataTab = iconItem.getAttribute('data-tab');
+
+                // Удаляем класс 'active' у всех элементов
+                iconItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Скрываем все cardItems
+                cardItems.forEach(cardItem => {
+                    cardItem.classList.remove('active');
+                });
+
+                // Если элемент не был активным, делаем его активным
+                if (!isActive) {
+                    iconItem.classList.add('active');
+
+                    // Показываем соответствующий cardItem
+                    cardItems.forEach(cardItem => {
+                        if (cardItem.id === dataTab) {
+                            cardItem.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+    }
+}
+
+

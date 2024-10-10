@@ -181,6 +181,11 @@ $hd: 1920px;
     padding: 12px;
     background: $grey-2;
     border-radius: 10px;
+    transition: $transition;
+
+    &:hover {
+        background: $grey-3;
+    }
 }
 
 @mixin columCountWidth($count) {
