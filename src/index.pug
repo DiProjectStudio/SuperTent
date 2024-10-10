@@ -5,6 +5,7 @@ bodyClass: main-page
 ---
 
 extends includes/_page
+include components/_category-item
 
 block main
     section.main
@@ -38,73 +39,75 @@ block main
     section.tents
         .container
             .tents__inner
-                .tents__top
+                .tents__top.section-top
                     .tents__title.section-title ШАТРЫ
                     a(href='javascript:void(0)').link все виды шатров
-                .tents__grid
-                    a(href='javascript:void(0)').tents__item-card
-                        .item-card__image
-                            +img('tents-1.jpg')
-                        .item__card__text Арочные
-                        .card-info.btn.btn--default Подробнее
-                    a(href='javascript:void(0)').tents__item-card
-                        .item-card__image
-                            +img('tents-2.jpg')
-                        .item__card__text Быстросборные
-                        .card-info.btn.btn--default Подробнее
-                    a(href='javascript:void(0)').tents__item-card
-                        .item-card__image
-                            +img('tents-3.jpg')
-                        .item__card__text Большие
-                        .card-info.btn.btn--default Подробнее
-                    a(href='javascript:void(0)').tents__item-card
-                        .item-card__image
-                            +img('tents-4.jpg')
-                        .item__card__text Деревянные
-                        .card-info.btn.btn--default Подробнее
-                    a(href='javascript:void(0)').tents__item-card
-                        .item-card__image
-                            +img('tents-5.jpg')
-                        .item__card__text Сферические
-                        .card-info.btn.btn--default Подробнее
-                    a(href='javascript:void(0)').tents__item-card
-                        .item-card__image
-                            +img('tents-6.jpg')
-                        .item__card__text Павильоны
-                        .card-info.btn.btn--default Подробнее
+                .tents__grid.section-grid
+                    -
+                        var tentCategoryItems = [
+                            {title: 'Арочные'},
+                            {title: 'Быстросборные'},
+                            {title: 'Большие'},
+                            {title: 'Деревянные'},
+                            {title: 'Сферические'},
+                            {title: 'Павильоны'},
+                        ]
+
+                    each tentCategoryItem, index in tentCategoryItems
+                        +category-item('tents', tentCategoryItem.title, index)
+
+
 
     section.advantages
-            .advantages__inner
-                .advantages__text Преимущества работы с нами
-                .advantages__image
-                    picture
-                        source(srcset="assets/images/advantages_1920.jpg", media="(min-width: 1600px)")
-                        source(srcset="assets/images/advantages_1200.jpg", media="(min-width: 1200px)")
-                        +img('advantages.jpg')
-                .advantages__icon-items
-                    .icon-item.active(data-tab='speed')
-                        +img('icon_plus.svg')
-                    .icon-item(data-tab='experience')
-                        +img('icon_plus.svg')
-                    .icon-item(data-tab='reliability')
-                        +img('icon_plus.svg')
-                    .icon-item(data-tab='quality')
-                        +img('icon_plus.svg')
-            .advantages__card-items
-                .card-item.active#speed
-                    .card-item__title 1/4 СКОРОСТЬ
-                    .card-item__description Принимаем заказы в сжатые сроки и реализовываем их на высоком уровне
-                .card-item#experience
-                    .card-item__title 2/4 ОПЫТ
-                    .card-item__description Штатные бригады состоят из профессионалов своего дела за плечами которых с десяток площадок различной сложности
-                .card-item#reliability
-                    .card-item__title 3/4 НАДЕЖНОСТЬ
-                    .card-item__description Мы ценим доверие и время наших клиентов
-                .card-item#quality
-                    .card-item__title 4/4 КАЧЕСТВО
-                    .card-item__description Мы тщательно следим за состоянием наших конструкций и оборудования
+        .advantages__inner
+            .advantages__text Преимущества работы с нами
+            .advantages__image
+                picture
+                    source(srcset="assets/images/advantages_1920.jpg", media="(min-width: 1600px)")
+                    source(srcset="assets/images/advantages_1200.jpg", media="(min-width: 1200px)")
+                    +img('advantages.jpg')
+            .advantages__icon-items
+                .icon-item.active(data-tab='speed')
+                    +img('icon_plus.svg')
+                .icon-item(data-tab='experience')
+                    +img('icon_plus.svg')
+                .icon-item(data-tab='reliability')
+                    +img('icon_plus.svg')
+                .icon-item(data-tab='quality')
+                    +img('icon_plus.svg')
+        .advantages__card-items
+            .card-item.active#speed
+                .card-item__title 1/4 СКОРОСТЬ
+                .card-item__description Принимаем заказы в сжатые сроки и реализовываем их на высоком уровне
+            .card-item#experience
+                .card-item__title 2/4 ОПЫТ
+                .card-item__description Штатные бригады состоят из профессионалов своего дела за плечами которых с десяток площадок различной сложности
+            .card-item#reliability
+                .card-item__title 3/4 НАДЕЖНОСТЬ
+                .card-item__description Мы ценим доверие и время наших клиентов
+            .card-item#quality
+                .card-item__title 4/4 КАЧЕСТВО
+                .card-item__description Мы тщательно следим за состоянием наших конструкций и оборудования
 
+    section.furniture
+        .container
+            .furniture__inner
+                .furniture__top.section-top
+                    .furniture__title.section-title МЕБЕЛЬ
+                    a(href='javascript:void(0)').link все виды мебели
+                .tents__grid.section-grid
+                    -
+                        var furnitureCategoryItems = [
+                            {title: 'Диваны'},
+                            {title: 'Стулья'},
+                            {title: 'Столы'},
+                            {title: 'Кресла'},
+                            {title: 'Уличная мебель'},
+                            {title: 'Столы из ротанга'},
+                        ]
 
+                    each furnitureCategoryItem, index in furnitureCategoryItems
+                        +category-item('furniture', furnitureCategoryItem.title, index)
 
 
 
