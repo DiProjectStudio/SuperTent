@@ -82,7 +82,7 @@ block main
                         source(srcset="assets/images/advantages_1200.jpg", media="(min-width: 1200px)")
                         +img('advantages.jpg')
                 .advantages__icon-items
-                    .icon-item(data-tab='speed')
+                    .icon-item.active(data-tab='speed')
                         +img('icon_plus.svg')
                     .icon-item(data-tab='experience')
                         +img('icon_plus.svg')
@@ -91,7 +91,7 @@ block main
                     .icon-item(data-tab='quality')
                         +img('icon_plus.svg')
             .advantages__card-items
-                .card-item#speed
+                .card-item.active#speed
                     .card-item__title 1/4 СКОРОСТЬ
                     .card-item__description Принимаем заказы в сжатые сроки и реализовываем их на высоком уровне
                 .card-item#experience

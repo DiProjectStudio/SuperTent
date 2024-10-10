@@ -1,3 +1,4 @@
+let innerWidth;
 $(document).ready(function () {
 
     // INPUT MASK PHONE NUMBER
@@ -12,6 +13,11 @@ $(document).ready(function () {
     });
 
     advantagesAction();
+    innerWidth = window.innerWidth;
+});
+
+window.addEventListener('resize', function () {
+    innerWidth = window.innerWidth;
 });
 
 function advantagesAction() {
@@ -25,15 +31,19 @@ function advantagesAction() {
                 const isActive = iconItem.classList.contains('active');
                 const dataTab = iconItem.getAttribute('data-tab');
 
-                // Удаляем класс 'active' у всех элементов
-                iconItems.forEach(item => {
-                    item.classList.remove('active');
-                });
+                if (innerWidth < 1200) {
+                    // Удаляем класс 'active' у всех элементов
+                    iconItems.forEach(item => {
+                        item.classList.remove('active');
+                    });
 
-                // Скрываем все cardItems
-                cardItems.forEach(cardItem => {
-                    cardItem.classList.remove('active');
-                });
+                    // Скрываем все cardItems
+                    cardItems.forEach(cardItem => {
+                        cardItem.classList.remove('active');
+                    });
+                }
+
+
 
                 // Если элемент не был активным, делаем его активным
                 if (!isActive) {
@@ -46,9 +56,21 @@ function advantagesAction() {
                         }
                     });
                 }
+
+                if (innerWidth >=1200 && isActive) {
+                    iconItem.classList.remove('active');
+
+                    // Показываем соответствующий cardItem
+                    cardItems.forEach(cardItem => {
+                        if (cardItem.id === dataTab) {
+                            cardItem.classList.remove('active');
+                        }
+                    });
+                }
             });
         });
     }
 }
+
 
 

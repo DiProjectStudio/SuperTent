@@ -354,6 +354,14 @@
     @include breakpoint(md) {
       height: 530px;
     }
+
+    @include breakpoint(lg) {
+      height: 725px;
+    }
+
+    @include breakpoint(xl) {
+      height: 1064px;
+    }
   }
 
   &__image {
@@ -370,9 +378,25 @@
     text-transform: uppercase;
     position: absolute;
     top: 24px;
-    left: 10px;
+    left: $container;
     z-index: 1;
-    text-wrap: balance;
+    max-width: 290px;
+    line-height: 120%;
+
+    @include breakpoint(md) {
+      top: 64px;
+    }
+
+    @include breakpoint(lg) {
+      font-size: 28px;
+      top: 96px;
+    }
+
+    @include breakpoint(xl) {
+      font-size: 32px;
+      left: calc((100vw - 1600px) / 2 + 18px);
+      max-width: 385px;
+    }
   }
 }
 
@@ -391,6 +415,12 @@
     border-radius: 50%;
     @include flexCenterCenter;
     transition: .4s ease;
+    cursor: pointer;
+
+    @include breakpoint(md) {
+      width: 32px;
+      height: 32px;
+    }
 
     &.active {
       transform: rotate(45deg);
@@ -399,27 +429,86 @@
     &:nth-child(1) {
       left: 28px;
       bottom: 59px;
+
+      @include breakpoint(md) {
+        left: 127px;
+        bottom: 245px;
+      }
+
+      @include breakpoint(lg) {
+        left: 230px;
+        bottom: 231px;
+      }
+
+      @include breakpoint(xl) {
+        left: calc(((100vw - 1600px) / 2) + 168px);
+        bottom: 342px;
+      }
     }
 
     &:nth-child(2) {
       left: 127px;
       top: 104px;
+
+      @include breakpoint(md) {
+        left: 297px;
+        top: 132px;
+      }
+
+      @include breakpoint(lg) {
+        left: 427px;
+        top: 149px;
+      }
+
+      @include breakpoint(xl) {
+        top: 191px;
+        left: calc(((100vw - 1600px) / 2) + 622px);
+      }
     }
 
     &:nth-child(3) {
       top: 96px;
       right: 64px;
+
+      @include breakpoint(md) {
+        top: 140px;
+        right: 149px;
+      }
+
+      @include breakpoint(lg) {
+        top: 205px;
+        right: 243px;
+      }
+
+      @include breakpoint(xl) {
+        top: 331px;
+        right: calc(((100vw - 1600px) / 2) + 243px);
+      }
     }
 
     &:nth-child(4) {
       right: 44px;
       bottom: 71px;
+
+      @include breakpoint(md) {
+        right: 100px;
+        bottom: 173px;
+      }
+
+      @include breakpoint(lg) {
+        right: 168px;
+        bottom: 231px;
+      }
+
+      @include breakpoint(xl) {
+        bottom: 280px;
+        right: calc(((100vw - 1600px) / 2) + 129px);
+      }
     }
   }
 }
 
 .advantages__card-items {
-  //padding-top: 48px;
 
   .card-item {
     max-height: 0;
@@ -429,17 +518,89 @@
     display: grid;
     gap: 12px;
 
+    @include breakpoint(md) {
+      border-radius: 10px;
+      background: $white;
+      padding: 0 12px 0;
+      position: absolute;
+      opacity: 0;
+      left: 10px;
+      top: 337px;
+      width: 266px;
+      height: fit-content;
+    }
+
+    &:nth-child(1) {
+      @include breakpoint(lg) {
+        top: 500px;
+        left: 118px;
+      }
+
+      @include breakpoint(xl) {
+        top: 734px;
+        left: calc(((100vw - 1600px) / 2) + 53px);
+      }
+    }
+    &:nth-child(2) {
+      @include breakpoint(lg) {
+        top: 197px;
+        left: 315px;
+      }
+
+      @include breakpoint(xl) {
+        top: 253px;
+        left: calc(((100vw - 1600px) / 2) + 504px);
+      }
+    }
+    &:nth-child(3) {
+      @include breakpoint(lg) {
+        top: 253px;
+        right: 164px;
+        left: unset;
+      }
+
+      @include breakpoint(xl) {
+        top: 393px;
+        right: calc(((100vw - 1600px) / 2) + 115px);
+      }
+    }
+    &:nth-child(4) {
+      @include breakpoint(lg) {
+        top: 500px;
+        right: 82px;
+        left: unset;
+      }
+
+      @include breakpoint(xl) {
+        top: 796px;
+        right: calc(((100vw - 1600px) / 2) + 3px);
+      }
+    }
+
     &__title {
       font-size: 18px;
     }
 
     &__description {
       font-weight: 400;
+
+      @include breakpoint(md) {
+        font-size: 16px;
+      }
     }
 
     &.active {
       max-height: 228px;
       padding-top: 48px;
+
+      @include breakpoint(md) {
+        padding: 12px;
+        opacity: 1;
+      }
+
+      @include breakpoint(xl) {
+        padding: 16px 28px;
+      }
     }
   }
 }
