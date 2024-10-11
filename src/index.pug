@@ -95,7 +95,7 @@ block main
                 .furniture__top.section-top
                     .furniture__title.section-title МЕБЕЛЬ
                     a(href='javascript:void(0)').link все виды мебели
-                .tents__grid.section-grid
+                .furniture__grid.section-grid
                     -
                         var furnitureCategoryItems = [
                             {title: 'Диваны'},
@@ -108,6 +108,67 @@ block main
 
                     each furnitureCategoryItem, index in furnitureCategoryItems
                         +category-item('furniture', furnitureCategoryItem.title, index)
+    section.scenes
+        .container
+            .scenes__inner
+                .scenes__title.section-title СЦЕНЫ И ПОДИУМЫ
+                .scenes__grid.section-grid
+                    -
+                        var scenesCategoryItems = [
+                            {title: 'Двускатная сцена'},
+                            {title: 'Односкатная сцена'},
+                            {title: 'Подиум со ступенями'},
+                            {title: 'Подиум'},
+                        ]
+
+                    each scenesCategoryItem, index in scenesCategoryItems
+                        +category-item('scenes', scenesCategoryItem.title, index)
+    section.equipment
+        .container
+            .equipment__inner
+                .equipment__top
+                    .equipment__title.section-title ОБОРУДОВАНИЕ
+                .equipment__grid.section-grid
+                    -
+                        var equipmentCategoryItems = [
+                            {title: 'Экраны и видео'},
+                            {title: 'Звуковое оборудование'},
+                            {title: 'Световое оборудование'},
+                            {title: 'Техническое оборудование'},
+                        ];
+
+                    each equipmentCategoryItem, index in equipmentCategoryItems
+                        +category-item('equipment', equipmentCategoryItem.title, index)
+
+    section.catering
+        .container
+            .catering__inner
+                .catering__top.section-top
+                    .catering__title.section-title кейтеринг для вашего мероприятия
+                .swiper-arrows
+                    .swiper-arrow-prev
+                        +img('icon_arrow-left.svg')
+                    .swiper-arrow-prev
+                        +img('icon_arrow-right.svg')
+                .catering__content
+                    .catering__text
+                        p Вы можете заказать полную организацию и проведение мероприятия, которая включает в себя дизайн, флористическое оформление и ресторанное обслуживание с сервировкой столов и официантами
+                        ul.custom-list
+                            li разнообразие блюд любой кухни мира с учетом предпочтений и возможных пищевых ограничений.
+                            li есть мечта провести мероприятие в особенном месте? Организуем его в любой точке мира и локации.
+                        .catering__buttons
+                            a(href='javascript:void(0)').btn.btn--default Оставить заявку
+                            a(href='javascript:void(0)').btn.btn--transparent Подробнее
+                    .catering__image-slider.swiper
+
+                        .swiper-wrapper
+                            .swiper-slide
+                                +img('catering-1.jpg')
+                            .swiper-slide
+                                +img('catering-2.jpg')
+                            .swiper-slide
+                                +img('catering-3.jpg')
+
 
 
 

@@ -30,4 +30,39 @@ $(document).ready(function() {
         }
     });*/
 
+    sliderClone('catering');
+    const cateringSlider = new Swiper('.catering__image-slider.swiper', {
+        slidesPerView: 1.2,
+        spaceBetween: 10,
+        loop: true,
+        navigation: {
+            prevEl: '.catering__image-slider.swiper .swiper-arrow-prev',
+            nextEl: '.catering__image-slider.swiper .swiper-arrow-next'
+        },
+        breakpoints: {
+            744: {
+                slidesPerView: 2.4,
+            }
+        }
+    })
+
 });
+
+function sliderClone(parent) {
+    const allSlides = document.querySelectorAll(`.${parent} .swiper-slide`);
+    const slidesCount = allSlides.length;
+    let iterationCount = 0;
+
+    if (slidesCount >= 9 || !slidesCount) {
+        return;
+    }
+
+    iterationCount = Math.floor(9 / slidesCount);
+    for (let i = 0; i < iterationCount - 1; i++) {
+        allSlides.forEach(slide => {
+            const slidesParent = slide.parentElement;
+            let clonedSlide = slide.cloneNode(true);
+            slidesParent.appendChild(clonedSlide);
+        });
+    }
+}
