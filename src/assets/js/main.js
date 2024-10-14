@@ -14,6 +14,9 @@ $(document).ready(function () {
 
     advantagesAction();
     innerWidth = window.innerWidth;
+
+    copyLinkInWorksSection();
+    copySlideTitleInWorkSection();
 });
 
 window.addEventListener('resize', function () {
@@ -44,7 +47,6 @@ function advantagesAction() {
                 }
 
 
-
                 // Если элемент не был активным, делаем его активным
                 if (!isActive) {
                     iconItem.classList.add('active');
@@ -57,7 +59,7 @@ function advantagesAction() {
                     });
                 }
 
-                if (innerWidth >=1200 && isActive) {
+                if (innerWidth >= 1200 && isActive) {
                     iconItem.classList.remove('active');
 
                     // Показываем соответствующий cardItem
@@ -69,6 +71,27 @@ function advantagesAction() {
                 }
             });
         });
+    }
+}
+
+function copyLinkInWorksSection() {
+    const linkElement = document.querySelector('.works__top a.link');
+    const worksInnerElement = document.querySelector('.works__inner');
+
+    const linkElementClone = linkElement.cloneNode(true);
+
+    if (linkElementClone && worksInnerElement) {
+        worksInnerElement.appendChild(linkElementClone);
+    }
+
+}
+
+function copySlideTitleInWorkSection() {
+    const slideTitles = document.querySelectorAll('.works__item-title');
+    if (slideTitles) {
+        slideTitles.forEach(title => {
+            title.nextElementSibling.querySelector('.works__item-content-text').appendChild(title.cloneNode(true));
+        })
     }
 }
 

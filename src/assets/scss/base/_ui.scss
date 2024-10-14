@@ -323,7 +323,17 @@ h1 {
   margin-top: 24px;
   li {
     @include flexAlignCenter;
-    gap: 16px;
+
+
+    span {
+      font-size: 20px;
+      font-weight: 500;
+      margin-right: 0.5em;
+
+      @include breakpoint(md) {
+        font-size: 24px;
+      }
+    }
 
     &:before {
       content: '';
@@ -333,6 +343,7 @@ h1 {
       flex-shrink: 0;
       display: block;
       border-radius: 50%;
+      margin-right: 16px;
     }
 
     & + li {
@@ -345,9 +356,25 @@ p + p {
   margin-top: 20px;
 }
 
+ul + p {
+  margin-top: 16px;
+
+  @include breakpoint(xl) {
+    margin-top: 24px;
+  }
+}
+
 
 
 
 /////////////////////
 /// SWIPER SLIDER
 /////////////////////
+
+.swiper-arrow-prev, .swiper-arrow-next {
+  &.swiper-button-disabled {
+    svg path {
+      fill: $grey;
+    }
+  }
+}
