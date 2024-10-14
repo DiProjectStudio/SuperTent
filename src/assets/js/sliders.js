@@ -34,18 +34,41 @@ $(document).ready(function() {
     const cateringSlider = new Swiper('.catering__image-slider.swiper', {
         slidesPerView: 1.2,
         spaceBetween: 10,
-        loop: true,
+        // loop: true,
         navigation: {
-            prevEl: '.catering__image-slider.swiper .swiper-arrow-prev',
-            nextEl: '.catering__image-slider.swiper .swiper-arrow-next'
+            prevEl: '.catering .swiper-arrow-prev',
+            nextEl: '.catering .swiper-arrow-next'
         },
         breakpoints: {
             744: {
                 slidesPerView: 2.4,
+            },
+            1200: {
+                slidesPerView: 3,
+            },
+            1600: {
+                slidesPerView: 3.3
+            }
+        },
+        on: {
+            slideChange: () => {
+                const nextArrow = document.querySelector('.catering .swiper-arrow-next');
+                const prevArrow = document.querySelector('.catering .swiper-arrow-prev');
+
+                if (this.isEnd) {
+                    nextArrow.classList.add('disabled');
+                } else {
+                    nextArrow.classList.remove('disabled');
+                }
+
+                if (this.activeIndex === 0) {
+                    prevArrow.classList.add('disabled')
+                } else {
+                    prevArrow.classList.remove('disabled')
+                }
             }
         }
     })
-
 });
 
 function sliderClone(parent) {

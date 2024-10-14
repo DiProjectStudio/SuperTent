@@ -145,11 +145,11 @@ block main
             .catering__inner
                 .catering__top.section-top
                     .catering__title.section-title кейтеринг для вашего мероприятия
-                .swiper-arrows
-                    .swiper-arrow-prev
-                        +img('icon_arrow-left.svg')
-                    .swiper-arrow-prev
-                        +img('icon_arrow-right.svg')
+                    .swiper-arrows
+                        .swiper-arrow-prev
+                            include assets/images/icon_arrow-left.svg
+                        .swiper-arrow-next
+                            include assets/images/icon_arrow-right.svg
                 .catering__content
                     .catering__text
                         p Вы можете заказать полную организацию и проведение мероприятия, которая включает в себя дизайн, флористическое оформление и ресторанное обслуживание с сервировкой столов и официантами
@@ -160,7 +160,6 @@ block main
                             a(href='javascript:void(0)').btn.btn--default Оставить заявку
                             a(href='javascript:void(0)').btn.btn--transparent Подробнее
                     .catering__image-slider.swiper
-
                         .swiper-wrapper
                             .swiper-slide
                                 +img('catering-1.jpg')

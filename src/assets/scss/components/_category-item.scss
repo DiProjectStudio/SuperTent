@@ -49,15 +49,18 @@
     scale: .9;
     max-width: 142px;
     height: auto;
+    //max-height: 90px;
     align-self: flex-end;
-    width: 70%;
+    width: 50%;
 
     @include breakpoint(md) {
       max-width: 227px;
+      //width: 50%;
     }
 
     @include breakpoint(lg) {
       max-width: 260px;
+      width: 70%;
     }
 
     @include breakpoint(xl) {
@@ -73,7 +76,8 @@
     font-size: 14px;
     font-weight: 400;
     align-self: flex-end;
-    padding-bottom: 12px;
+    padding: 0 11px 12px;
+    text-align: center;
 
     @include breakpoint(md) {
       font-size: 16px;

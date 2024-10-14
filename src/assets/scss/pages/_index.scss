@@ -415,6 +415,7 @@
         left: calc(((100vw - 1600px) / 2) + 53px);
       }
     }
+
     &:nth-child(2) {
       @include breakpoint(lg) {
         top: 201px;
@@ -426,6 +427,7 @@
         left: calc(((100vw - 1600px) / 2) + 504px);
       }
     }
+
     &:nth-child(3) {
       @include breakpoint(lg) {
         top: 257px;
@@ -438,6 +440,7 @@
         right: calc(((100vw - 1600px) / 2) + 115px);
       }
     }
+
     &:nth-child(4) {
       @include breakpoint(lg) {
         top: 514px;
@@ -500,21 +503,61 @@
 
 .catering {
 
+  &__inner {
+
+    .catering__top {
+      @include flexCenterBetween;
+
+      .catering__title {
+        max-width: 520px;
+      }
+
+      .swiper-arrows {
+        display: none;
+
+
+        .swiper-arrow-prev, .swiper-arrow-next {
+          &.swiper-button-disabled {
+            svg path {
+              fill: $grey;
+            }
+          }
+        }
+
+
+        @include breakpoint(lg) {
+          @include flexAlignCenter;
+          gap: 12px;
+        }
+      }
+    }
+
+  }
+
   &__content {
     @include breakpoint(lg) {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
+    @include breakpoint(xl) {
+      gap: 156px;
     }
 
     .catering__text {
+      @include breakpoint(lg) {
+        max-width: 519px;
+        flex-shrink: 0;
+      }
     }
 
     .catering__image-slider.swiper {
 
     }
   }
-  .swiper-arrows {
-    display: none;
-  }
+
 
   .catering__buttons {
     margin-top: 24px;
@@ -538,12 +581,19 @@
   }
 
   &__image-slider.swiper {
-
+    @include breakpoint(lg) {
+      width: 100%;
+    }
 
     .swiper-wrapper {
+
       .swiper-slide {
         height: 240px;
         border-radius: 10px;
+
+        @include breakpoint(lg) {
+          height: 326px;
+        }
       }
     }
   }
