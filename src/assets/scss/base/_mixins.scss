@@ -195,3 +195,7 @@ $hd: 1920px;
     width: calc((100vw - var(--container) * 2) / 12 * $count);
 }
 
+@mixin columnXlWidth($count) {
+    width: calc((1600px - var(--container) * 2) / 12 * $count);
+}
+

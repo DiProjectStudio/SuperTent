@@ -243,6 +243,33 @@ block main
                                         li <span>7</span> шатров пагода
                                     a(href='javascript:void(0)').btn.btn--default Подробнее
 
+    section.feedback
+        .container
+            .feedback__inner
+                .feedback__form
+                    .feedback__title.section-title не нашли ответ на свой вопрос?
+                    .feedback__subtitle Просто напишите свои данные и мы ответим вам очень быстро!
+                    form
+                        .feedback__input
+                            input(placeholder='Имя' type='text').input
+                        .feedback__input.phone-mask
+                            input(placeholder='+7 (999)-999-99-99' type='text').input
+                        .feedback__agree
+                            label.checkbox
+                                input(type='checkbox')
+                                span
+                            span Согласен с&nbsp;
+                                a(href='javascript:void(0)').link политикой конфиденциальности сайта
+                        .feedback__button
+                            a(href='javascript:void(0)').btn.btn--default Оставить заявку
+                .feedback__image
+                    +img('feedback.jpg')
+
+    include components/_seo
+
+
+
+
 
 
 

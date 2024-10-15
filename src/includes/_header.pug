@@ -32,9 +32,11 @@ block header
                     .header__top-request
                         a(href='javascript:void(0)').btn.btn--transparent Оставить заявку
                 .header__bottom
-                    .header__bottom-catalog-btn.btn.btn--default
-                        span Каталог
-                        include ../assets/images/icon_burger.svg
+                    .header__bottom-catalog-btn
+                        .btn.btn--default#catalogToggleBtn
+                            span Каталог
+                            include ../assets/images/icon_burger.svg
+                        include ../components/_catalog
                     .header__bottom-nav
                         nav
                             ul

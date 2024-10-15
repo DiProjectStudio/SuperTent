@@ -1,0 +1,7 @@
+include ../includes/_mixins
+
+mixin catalog-item(title, index)
+    .catalog__item
+        .catalog__item-icon
+            +img(`icon_catalog-${index + 1}.svg`)
+        .catalog__item-title= title

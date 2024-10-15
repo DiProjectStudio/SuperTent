@@ -1,0 +1,9 @@
+.catalog__item {
+  @include flexAlignCenter;
+  gap: 24px;
+  padding: 8px 16px;
+
+  & + .catalog__item {
+    border-top: 1px solid $grey-3;
+  }
+}

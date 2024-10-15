@@ -196,16 +196,23 @@
   }
 
   &-catalog-btn {
-    padding: 12px;
-    height: 48px;
+    position: relative;
 
-    span {
-      display: none;
+    .btn.btn--default {
+      padding: 12px;
+      height: 48px;
 
-      @include breakpoint(md) {
-        display: block;
+      span {
+        display: none;
+
+        @include breakpoint(md) {
+          display: block;
+        }
       }
+
     }
+
+
   }
 
   &-nav {

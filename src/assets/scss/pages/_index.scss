@@ -580,6 +580,7 @@
       .swiper-slide {
         height: 240px;
         border-radius: 10px;
+        cursor: grab;
 
         @include breakpoint(lg) {
           height: 326px;
@@ -630,6 +631,7 @@
 
   @include breakpoint(lg) {
     padding: 32px;
+    border-radius: 40px;
   }
 
   @include breakpoint(xl) {
@@ -728,6 +730,7 @@
       @include breakpoint(xl) {
         grid-template-rows: 390px 98px;
       }
+
       .swiper-arrows {
         @include flexCenterBetween;
         position: absolute;
@@ -741,6 +744,7 @@
           transform: translateY(-50%);
           left: 0;
         }
+
         .swiper-arrow-prev, .swiper-arrow-next {
           width: 32px;
           height: 32px;
@@ -780,7 +784,7 @@
         }
       }
 
-      .thumbs-slider.swiper  {
+      .thumbs-slider.swiper {
         display: none;
         width: 100%;
 
@@ -837,5 +841,157 @@
         }
       }
     }
+  }
+}
+
+.feedback {
+
+  &__inner {
+    @include breakpoint(md) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+    }
+
+    @include breakpoint(xl) {
+      grid-template-columns: 1fr 746px;
+    }
+  }
+
+  &__form {
+    border-radius: 20px;
+    background: $grey-2;
+    padding: 24px 10px;
+    display: grid;
+    gap: 12px;
+
+    @include breakpoint(md) {
+      border-radius: 20px 0 0 20px;
+      padding: 24px 12px;
+      gap: 0;
+    }
+
+    @include breakpoint(lg) {
+      padding: 35px 32px;
+      border-radius: 40px 0 0 40px;
+    }
+
+    @include breakpoint(xl) {
+      padding: 49px 64px;
+    }
+  }
+
+  form {
+    display: grid;
+    gap: 12px;
+
+    @include breakpoint(md) {
+      gap: 0;
+    }
+
+    @include breakpoint(lg) {
+      max-width: 440px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0;
+
+    @include breakpoint(md) {
+      margin-bottom: 6px;
+    }
+
+    @include breakpoint(lg) {
+      max-width: 440px;
+      margin-bottom: 12px;
+    }
+
+    @include breakpoint(xl) {
+      max-width: unset;
+    }
+
+  }
+
+  &__subtitle {
+    margin-bottom: 12px;
+
+    @include breakpoint(lg) {
+      max-width: 440px;
+      margin-bottom: 30px;
+    }
+
+    @include breakpoint(xl) {
+      max-width: 591px;
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+
+  &__input {
+
+    & + .feedback__input {
+      @include breakpoint(md) {
+        margin-top: 6px;
+      }
+
+      @include breakpoint(lg) {
+        margin-top: 12px;
+      }
+    }
+  }
+
+  &__agree {
+    margin-top: 4px;
+    @include flexAlignCenter;
+    gap: 14px;
+    margin-bottom: 4px;
+
+    @include breakpoint(md) {
+      margin: 12px 0;
+    }
+
+    span {
+      display: inline-block;
+    }
+
+    a {
+      display: inline;
+    }
+
+  }
+
+  &__button {
+    justify-self: center;
+
+    @include breakpoint(md) {
+      justify-self: unset;
+    }
+
+    a.btn {
+      padding: 10px 24px;
+
+      @include breakpoint(md) {
+        padding: 12px 32px;
+      }
+
+      @include breakpoint(lg) {
+        padding: 18px 48px;
+      }
+    }
+  }
+
+  &__image {
+    display: none;
+    @include breakpoint(md) {
+      display: block;
+      border-radius: 0 20px 20px 0;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    @include breakpoint(lg) {
+      border-radius: 0 40px 40px 0;
+    }
+
   }
 }

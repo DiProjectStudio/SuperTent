@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   gap: 30px;
-  overflow: auto;
+  overflow: unset;
 }
 
 .breadcrumbs-item {
@@ -19,6 +19,8 @@
   font-style: normal;
   position: relative;
   white-space: nowrap;
+  font-size: 14px;
+  color: $grey;
 
   &:first-child {
     overflow: unset;
@@ -28,10 +30,15 @@
     &::after {
       position: absolute;
       display: block;
-      content: '/';
-      top: calc(50% - 10px);
-      right: -19px;
+      content: '';
+      top: 50%;
+      transform: translateY(-50%);
+      right: -24px;
       font-size: 16px;
+      background: url("../images/icon_breadcrumbs-divider.svg");
+      width: 18px;
+      height: 18px;
+
     }
   }
 

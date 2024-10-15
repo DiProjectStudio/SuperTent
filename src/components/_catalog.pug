@@ -1,0 +1,74 @@
+include _breadcrumbs
+include _catalog-item
+-
+    var catalogItems = [
+        {
+            title: 'Шатры'
+        },
+        {
+            title: 'Мебель'
+        },
+        {
+            title: 'Сцены и подиумы'
+        },
+        {
+            title: 'Звуковое оборудование'
+        },
+        {
+            title: 'Световое оборудование'
+        },
+        {
+            title: 'Экраны и видеооборудование'
+        },
+        {
+            title: 'Техническое оборудование'
+        },
+        {
+            title: 'Оформление и декорации'
+        },
+        {
+            title: 'Дополнительно'
+        },
+        {
+            title: 'Кейтеринг'
+        },
+        {
+            title: 'Оборудование для кейтеринга'
+        },
+        {
+            title: 'Текстиль'
+        },
+        {
+            title: 'Стойки, витрины и стеллажи'
+        },
+        {
+            title: 'БИО туалеты'
+        },
+        {
+            title: 'Ограждения'
+        },
+        {
+            title: 'Флагштоки и брендирование'
+        },
+    ]
+
+.catalog#catalog
+    .catalog__inner
+        .catalog__header
+            .catalog__back-btn#backBtn
+                include ../assets/images/icon_arrow-triangle-left.svg
+            .catalog__logo.logo
+                span super
+                | tent
+            .catalog__search
+                include ../assets/images/icon_search.svg
+                .search__input
+                    input(type='search' placeholder='Поиск по сайту')
+                    include ../assets/images/icon_search.svg
+        +breadcrumbs('', 'Каталог')
+        .catalog__title Каталог товаров
+        .catalog__items
+            each catalogItem, index in catalogItems
+                +catalog-item(catalogItem.title, index)
+
+

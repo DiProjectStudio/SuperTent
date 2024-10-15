@@ -17,6 +17,7 @@ $(document).ready(function () {
 
     copyLinkInWorksSection();
     copySlideTitleInWorkSection();
+    seoShowMore();
 });
 
 window.addEventListener('resize', function () {
@@ -91,6 +92,25 @@ function copySlideTitleInWorkSection() {
     if (slideTitles) {
         slideTitles.forEach(title => {
             title.nextElementSibling.querySelector('.works__item-content-text').appendChild(title.cloneNode(true));
+        })
+    }
+}
+
+function seoShowMore() {
+    const moreBtn = document.getElementById('moreBtn');
+    const seoContent = document.querySelector('.seo__content-text');
+
+    if (moreBtn && seoContent) {
+        moreBtn.addEventListener('click', function () {
+            if (!seoContent.classList.contains('opened')) {
+                seoContent.classList.add('opened');
+                moreBtn.innerText = 'скрыть';
+            } else {
+                seoContent.classList.remove('opened');
+                moreBtn.innerText = 'подробнее';
+            }
+
+
         })
     }
 }
