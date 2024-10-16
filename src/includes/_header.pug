@@ -1,3 +1,35 @@
+-
+    var dropdownListItems =
+            {
+                tents: [
+                    {title: 'Арочные'},
+                    {title: 'Быстросборные'},
+                    {title: 'Большие'},
+                    {title: 'Деревянные'},
+                    {title: 'Павильоны'},
+                    {title: 'Сферические'},
+                    {title: 'Свадебные'},
+                ],
+                furniture: [
+                    {title: 'Стулья'},
+                    {title: 'Диваны'},
+                    {title: 'Кресла'},
+                    {title: 'Пуфы'},
+                    {title: 'Уличная мебель'},
+                    {title: 'Столы из ротанга'},
+                    {title: 'Текстиль'},
+                    {title: 'Мебель с подсветкой'},
+                ],
+                equipment: [
+                    {title: 'Звуковое оборудование'},
+                    {title: 'Световое оборудование'},
+                    {title: 'Экраны и видеооборудование'},
+                    {title: 'Техническое оборудование'},
+                    {title: 'Для кейтеринга'},
+                ]
+            }
+
+
 block header
     header#header.header
         .container
@@ -42,15 +74,34 @@ block header
                             ul
                                 li
                                     a(href='javascript:void(0)').dropdown Шатры
+                                    .dropdown__items
+                                        ul
+                                            each dropdownItem in dropdownListItems.tents
+                                                li
+                                                    a(href='javascript:void(0)')= dropdownItem.title
                                 li
-                                    a(href='javascript:void(0)').dropdown  Мебель
+                                    a(href='javascript:void(0)').dropdown Мебель
+                                    .dropdown__items
+                                        ul
+                                            each dropdownItem in dropdownListItems.furniture
+                                                li
+                                                    a(href='javascript:void(0)')= dropdownItem.title
+
                                 li
-                                    a(href='javascript:void(0)').dropdown  Сцены
+                                    a(href='javascript:void(0)').dropdown Оборудование
+                                    .dropdown__items
+                                        ul
+                                            each dropdownItem in dropdownListItems.equipment
+                                                li
+                                                    a(href='javascript:void(0)')= dropdownItem.title
                                 li
                                     a(href='javascript:void(0)') Кейтеринг
                     .header__bottom-search
                         input(type='search' placeholder='Поиск по сайту')
-                        include ../assets/images/icon_search.svg
+                        .icon__default.search__icon
+                            include ../assets/images/icon_search.svg
+                        a(href='javascript:void(0)').icon__focused.search__icon
+                            include ../assets/images/icon_search--white.svg
                     .header__bottom-works Наши работы
 
 

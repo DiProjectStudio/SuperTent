@@ -19,17 +19,27 @@ body b {
   color: inherit;
 }
 
-::-webkit-scrollbar {
 
+
+::-webkit-scrollbar {
+  width: 1px;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-track {
-
+  border-radius: 3px;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
+  background: $prime;
+  border-radius: 3px;
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $prime transparent;
+}
 
 main {
   min-height: calc(max(calc(100vh - 614px), 350px));

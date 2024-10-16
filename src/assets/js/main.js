@@ -18,6 +18,7 @@ $(document).ready(function () {
     copyLinkInWorksSection();
     copySlideTitleInWorkSection();
     seoShowMore();
+    isInputInFocus();
 });
 
 window.addEventListener('resize', function () {
@@ -115,5 +116,22 @@ function seoShowMore() {
     }
 }
 
+function isInputInFocus() {
+    const inputElement = document.querySelector(".header__bottom-search input");
+    inputElement.addEventListener("focus", () => {
+        inputElement.parentElement.classList.add('focused');
+    });
+
+    inputElement.addEventListener("blur", () => {
+        inputElement.parentElement.classList.remove('focused');
+    })
+
+
+    // document.addEventListener('click', (event) => {
+    //     if (!event.composedPath().includes(inputElement)) {
+    //         inputElement.parentElement.classList.remove('focused');
+    //     }
+    // });
+}
 
 

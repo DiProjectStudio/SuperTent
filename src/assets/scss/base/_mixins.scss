@@ -199,3 +199,14 @@ $hd: 1920px;
     width: calc((1600px - var(--container) * 2) / 12 * $count);
 }
 
+@mixin overlay() {
+    content: '';
+    display: block;
+    position: fixed;
+    background-color: #00000066;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
