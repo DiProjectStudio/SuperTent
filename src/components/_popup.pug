@@ -3,28 +3,27 @@ block popups
 
     // ПОПАП "ОСТАВИТЬ ЗАЯВКУ"
     #popup-request.popup
-        input.hidden-input
-        .popup__title Оставить заявку
+        .popup__title Заявка на обратный звонок!
         .popup__request-form
             .popup__inputs
                 .popup__input
-                    input(type='text' placeholder='Ваше имя*')
+                    input(type='text' placeholder='Ваше имя').input
                 .popup__input.phone-mask
-                    input(type='text' placeholder='Ваш телефон*')
+                    input(type='text' placeholder='+7 (999) 999-99-99').input
                 .popup__input
-                    input(type='text' placeholder='Электронная почта')
-                .popup__input
-                    textarea(placeholder='Комментарий к заявке')
+                    textarea(placeholder='Комментарий').input
+                .popup__checkbox
+                    label.checkbox
+                        input(type='checkbox')
+                        span
+                    span cоглашаюсь с&nbsp;
+                        a(href='javascript:void(0)').link политикой конфиденциальности
             .button
-                a.btn.btn-orange.btn-with-arrow.close-popup(data-fancybox data-src='#popup-success-request')
-                    .btn-text Отправить
-                    .btn-arrow
-
-                .agree Отправляя данные, вы соглашаетесь с политикой конфиденциальности, на сбор и обработку персональных данных.
+                a.btn.btn--default(data-fancybox data-src='#popup-success-request') Оставить заявку
 
     // ПОПАП "УСПЕШНО - ОБРАТНЫЙ ЗВОНОК"
     #popup-success-request.popup.popup-success
-        .popup__title Ваша заявка успешно отправлена
-        .popup__subtitle Наши менеджеры свяжутся с вами в ближайшее время
-        .popup-actions
-            a(href='/') Вернуться на главную
+        .popup-success__content
+            .popup__image
+                include ../assets/images/icon_check.svg
+            .popup__text Спасибо за оставленную заявку, в ближайшее время наш специалист свяжется с вами

@@ -1,3 +1,163 @@
 .popup {
   display: none;
+  padding: 24px 12px;
+  max-width: 449px;
+
+  @include breakpoint(md) {
+    padding: 24px 32px;
+  }
+
+  &__title {
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 16px;
+
+    @include breakpoint(md) {
+      font-size: 24px;
+      margin-bottom: 24px;
+      margin-top: 56px;
+    }
+  }
+
+  &__request-form {
+    display: grid;
+    justify-items: center;
+    gap: 16px;
+
+    @include breakpoint(md) {
+      gap: 20px;
+    }
+  }
+
+  &__inputs {
+    display: grid;
+    gap: 10px;
+
+    @include breakpoint(md) {
+      gap: 12px;
+    }
+
+    .popup__input {
+      input, textarea {
+        width: 100%;
+
+        &::placeholder {
+          font-size: 16px;
+          font-weight: 500;
+        }
+      }
+
+      textarea {
+        height: 60px;
+
+        @include breakpoint(md) {
+          height: 84px;
+        }
+      }
+    }
+  }
+
+  &__checkbox {
+    @include flexAlignCenter;
+    gap: 8px;
+
+    .checkbox {
+      width: 24px;
+      height: 24px;
+    }
+
+    label span {
+      width: 24px;
+      height: 24px;
+    }
+
+    & > span {
+      width: 100%;
+      display: inline-block;
+      cursor: pointer;
+
+      a {
+        display: inline;
+      }
+    }
+  }
+
+  .button {
+    a.btn {
+      padding: 10px 24px;
+    }
+  }
+
+  &.fancybox__content {
+    border-radius: 10px;
+  }
+}
+
+#popup-success-request {
+  display: none;
+  padding: 48px;
+  max-width: 340px;
+
+  @include breakpoint(md) {
+    max-width: 388px;
+  }
+
+  .popup-success__content {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    gap: 24px;
+
+    .popup__image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: $prime;
+      @include flexCenterCenter;
+
+      svg {
+        width: 70%;
+        height: auto;
+      }
+    }
+
+    .popup__text {
+      text-align: center;
+    }
+  }
+
+  .carousel__button.is-close {
+    display: none;
+  }
+}
+
+.fancybox__content > .carousel__button.is-close:not(.btn.carousel__button.is-close) {
+  top: 24px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  background-color: $prime;
+  border-radius: 7px;
+  padding: 6px;
+
+  @include breakpoint(md) {
+    right: 32px;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    padding: 9px;
+  }
+
+  svg {
+    filter: none;
+    path {
+      stroke-width: 3;
+    }
+  }
+}
+
+.fancybox__slide {
+  padding: 0 10px;
 }

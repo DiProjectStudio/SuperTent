@@ -27,13 +27,15 @@ body b {
 }
 
 ::-webkit-scrollbar-track {
-  border-radius: 3px;
+  border-radius: 10px;
   background: transparent;
+  //width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: $prime;
-  border-radius: 3px;
+  border-radius: 10px;
+  //width: 10px;
 }
 
 * {
@@ -85,9 +87,10 @@ input[type="search"]::-webkit-search-results-decoration {
 textarea,
 input[type="text"],
 input[type="button"],
-input[type="submit"] {
+input[type="submit"], {
   -webkit-appearance: none;
   -moz-appearance: none;
+  outline: none !important;
   //border-radius: 0;
 }
 
