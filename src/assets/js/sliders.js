@@ -42,7 +42,7 @@ $(document).ready(function() {
         }
     });
 
-    const thumbsWorkInnerSlider = new Swiper('.thumbs-slider.swiper', {
+    const thumbsWorkInnerSlider = new Swiper('.works .thumbs-slider.swiper', {
         slidesPerView: 4,
         spaceBetween: 25,
         breakpoints: {
@@ -52,7 +52,7 @@ $(document).ready(function() {
         }
     });
 
-    const worksInnerSlider = new Swiper('.main-slider.swiper', {
+    const worksInnerSlider = new Swiper('.works .main-slider.swiper', {
         slidesPerView: 1,
         navigation: {
             prevEl: '.works__item-content-images .swiper-arrow-prev',
@@ -64,6 +64,15 @@ $(document).ready(function() {
             swiper: thumbsWorkInnerSlider
         }
     });
+
+    const productSlider = new Swiper('.product .main-slider.swiper', {
+        slidesPerView: 1,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        },
+    })
 });
 
 function sliderClone(parent) {

@@ -1,0 +1,29 @@
+---
+title: 'Страница | Шатры'
+bodyClass: categories-page
+---
+
+extends includes/_page
+include components/_breadcrumbs
+include components/_category-item
+
+block main
+    +breadcrumbs('', 'Шатры')
+    section.cateries-page
+        .container
+            .categories-page
+                h1 Шатры
+                .section-grid
+                    -
+                        var tentCategoryItems = [
+                            {title: 'Арочные'},
+                            {title: 'Быстросборные'},
+                            {title: 'Большие'},
+                            {title: 'Деревянные'},
+                            {title: 'Сферические'},
+                            {title: 'Павильоны'},
+                        ]
+
+                    each tentCategoryItem, index in tentCategoryItems
+                        +category-item('tents', tentCategoryItem.title, index)
+    include components/_seo

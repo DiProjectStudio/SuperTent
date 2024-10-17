@@ -1,0 +1,70 @@
+.products-item {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.08);
+  border-radius: 30px;
+
+  &__image {
+    height: 232px;
+    background-color: $grey;
+    isolation: isolate;
+    border-radius: 30px 30px 0 0;
+
+    img {
+      border-radius: 30px 30px 0 0;
+    }
+  }
+
+  &__details {
+    padding: 24px;
+    background: $white;
+    border-radius: 0 0 30px 30px;
+    display: grid;
+    gap: 21px;
+
+    @include breakpoint(md) {
+      gap: 24px;
+    }
+  }
+
+  &__name {
+    min-height: 39px;
+    max-height: 39px;
+    font-size: 20px;
+    line-height: 120%;
+    @include textLimit(2);
+
+    @include breakpoint(lg) {
+      font-size: 24px;
+      min-height: 58px;
+      max-height: 58px;
+    }
+  }
+
+  &__price {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 16px;
+
+    p {
+      margin-top: 0;
+
+      span {
+        font-size: 18px;
+
+        @include breakpoint(md) {
+          font-size: 20px;
+        }
+      }
+
+      &:first-child {
+        span {
+          color: $prime;
+        }
+      }
+    }
+  }
+
+  a.btn {
+    padding: 10px 24px;
+    justify-self: center;
+  }
+}

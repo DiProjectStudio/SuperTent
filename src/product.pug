@@ -1,0 +1,38 @@
+---
+title: 'Страница | Шатры Пагода 5х5'
+bodyClass: product-page
+---
+
+extends includes/_page
+include components/_breadcrumbs
+
+
+block main
+    +breadcrumbs('', 'Шатры', 'Шатры быстросборные', 'Шатер Пагода 5x5')
+    section.product
+        .container
+            .product__inner
+                h1 Шатер Пагода 5х5
+                .product__card
+                    .product__card-images
+                        .main-slider.swiper
+                            .swiper-wrapper
+                                .swiper-slide(data-fancybox='gallery' data-src='assets/images/product-image.jpg')
+                                    +img('product-image.jpg')
+                                .swiper-slide(data-fancybox='gallery' data-src='assets/images/product-image.jpg')
+                                    +img('product-image.jpg')
+                                .swiper-slide(data-fancybox='gallery' data-src='assets/images/product-image.jpg')
+                                    +img('product-image.jpg')
+                                .swiper-slide(data-fancybox='gallery' data-src='assets/images/product-image.jpg')
+                                    +img('product-image.jpg')
+                            .swiper-pagination
+                        //.thumbs-slider.swiper
+                        //    .swiper-wrapper
+                        //        .swiper-slide
+                        //            +img('works-1.jpg')
+                        //        .swiper-slide
+                        //            +img('works-2.jpg')
+                        //        .swiper-slide
+                        //            +img('works-3.jpg')
+                        //        .swiper-slide
+                        //            +img('works-4.jpg')

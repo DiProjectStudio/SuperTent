@@ -1,0 +1,22 @@
+---
+title: 'Страница | Шатры Пагода'
+bodyClass: products-page
+---
+
+extends includes/_page
+include components/_breadcrumbs
+
+
+block main
+    +breadcrumbs('', 'Шатры', 'Шатры быстросборные')
+    section.products
+        .container
+            .products__inner
+                h1 Шатры быстросборные
+                .products__grid
+                     - var n = 0;
+                     while n < 8
+                         include components/_products-item
+                            - n++;
+                include components/_pagination
+    include components/_seo

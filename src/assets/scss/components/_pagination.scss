@@ -1,0 +1,42 @@
+.pagination {
+  padding: 12px;
+  @include flexCenterCenter;
+  margin-top: 10px;
+
+  @include breakpoint(md) {
+    margin-top: 32px;
+  }
+
+  &__items {
+    @include flexAlignCenter;
+
+    .pagination-item {
+      padding: 0 12px;
+      @include flexCenterCenter;
+      cursor: pointer;
+
+      &.active {
+        color: $white;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: $prime;
+      }
+    }
+  }
+
+  &__arrow {
+    cursor: pointer;
+    @include flexCenterCenter;
+
+    svg path {
+      stroke: $black;
+    }
+
+    &.disabled {
+      svg path {
+        stroke: $grey;
+      }
+    }
+  }
+}

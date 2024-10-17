@@ -1,0 +1,14 @@
+.product {
+
+}
+
+.product__card {
+  &-images {
+    .main-slider.swiper {
+      .swiper-slide {
+        height: 214px;
+        border-radius: 10px;
+      }
+    }
+  }
+}

@@ -79,13 +79,14 @@ function advantagesAction() {
 function copyLinkInWorksSection() {
     const linkElement = document.querySelector('.works__top a.link');
     const worksInnerElement = document.querySelector('.works__inner');
+    let linkElementClone;
 
-    const linkElementClone = linkElement.cloneNode(true);
-
+    if (linkElement) {
+        linkElementClone = linkElement.cloneNode(true);
+    }
     if (linkElementClone && worksInnerElement) {
         worksInnerElement.appendChild(linkElementClone);
     }
-
 }
 
 function copySlideTitleInWorkSection() {
@@ -110,9 +111,7 @@ function seoShowMore() {
                 seoContent.classList.remove('opened');
                 moreBtn.innerText = 'подробнее';
             }
-
-
-        })
+        });
     }
 }
 
@@ -124,14 +123,7 @@ function isInputInFocus() {
 
     inputElement.addEventListener("blur", () => {
         inputElement.parentElement.classList.remove('focused');
-    })
-
-
-    // document.addEventListener('click', (event) => {
-    //     if (!event.composedPath().includes(inputElement)) {
-    //         inputElement.parentElement.classList.remove('focused');
-    //     }
-    // });
+    });
 }
 
 
