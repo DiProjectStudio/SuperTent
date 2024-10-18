@@ -30,6 +30,7 @@
 
       .swiper-arrows {
         display: none;
+        cursor: pointer;
         @include breakpoint(md) {
           position: absolute;
           top: 50%;
@@ -63,6 +64,7 @@
         width: 100%;
         height: 214px;
         border-radius: 10px;
+        cursor: zoom-in;
 
         @include breakpoint(md) {
           height: 544px;
@@ -95,6 +97,7 @@
       .swiper-slide {
         border-radius: 6px;
         height: 90px;
+        cursor: pointer;
 
         @include breakpoint(lg) {
           height: 72px;
@@ -264,6 +267,13 @@ section.additional {
       border-radius: 6px;
       border: 1px solid $grey;
       transition: $transition;
+      cursor: pointer;
+
+      &:hover {
+        border: 1px solid $prime;
+        background: $second-green;
+        color: $prime;
+      }
 
       @include breakpoint(md) {
         padding: 14px 32px;

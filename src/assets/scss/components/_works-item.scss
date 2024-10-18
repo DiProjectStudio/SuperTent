@@ -1,0 +1,65 @@
+.works__item-component {
+  padding: 24px 12px;
+  background-color: $grey-2;
+  border-radius: 20px;
+  display: grid;
+
+  @include breakpoint(md) {
+    padding: 24px;
+  }
+
+  @include breakpoint(xl) {
+    padding: 32px;
+  }
+  .works__item-image {
+    height: 228px;
+    border-radius: 20px;
+    overflow: hidden;
+    isolation: isolate;
+    margin-bottom: 16px;
+
+    @include breakpoint(md) {
+      margin-bottom: 24px;
+    }
+
+    @include breakpoint(xl) {
+      height: 321px;
+    }
+  }
+
+  .works__item-title {
+    font-size: 20px;
+    min-height: 48px;
+    max-height: 48px;
+    @include textLimit(2);
+  }
+  .works__item-details {
+    margin-bottom: 12px;
+    li {
+      span {
+        font-size: 18px;
+      }
+
+      & + li {
+        margin-top: 6px;
+      }
+
+      &:before {
+        margin-right: 8px;
+      }
+    }
+  }
+  .works__item-button {
+    padding: 10px 24px;
+    justify-self: center;
+
+    @include breakpoint(lg) {
+      padding: 14px 32px;
+    }
+
+    @include breakpoint(xl) {
+      padding: 18px 48px;
+    }
+  }
+
+}

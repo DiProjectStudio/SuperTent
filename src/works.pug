@@ -1,0 +1,23 @@
+---
+title: 'Страница | Наши проекты'
+bodyClass: works-page
+---
+
+extends includes/_page
+include components/_breadcrumbs
+
+
+
+block main
+    +breadcrumbs('', 'Наши проекты')
+    section.works-page
+        .container
+            .works-page__inner
+                h1 Наши проекты
+                .works-page__grid
+                    - var n=0;
+                    while n < 8
+                        include components/_works-item
+                        - n++;
+            include components/_pagination
+    include components/_seo
