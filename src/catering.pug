@@ -1,0 +1,22 @@
+---
+title: 'Страница | Кейтеринг'
+bodyClass: catering-page
+---
+
+extends includes/_page
+include components/_breadcrumbs
+
+
+
+block main
+    +breadcrumbs('', 'Кейтеринг')
+    section.main
+        .main__inner
+            .container
+                .main__text
+                    h1.main__title.main-title Кейтеринг на Ваши мероприятия
+                    .main__subtitle Вы можете заказать полную организацию и проведение мероприятия, которая включает в себя дизайн, флористическое оформление и ресторанное обслуживание с сервировкой столов и официантами
+                    a(href='javascript:void(0)' data-fancybox data-src='#popup-request').main__button.btn.btn--default Оставить заявку
+            .main__image
+                +img('main.jpg')
+                .main__company supertent
