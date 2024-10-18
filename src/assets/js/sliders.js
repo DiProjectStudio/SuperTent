@@ -100,8 +100,48 @@ $(document).ready(function() {
                 spaceBetween: 20
             }
         }
+    });
+
+    const thumbsWorkSlider = new Swiper('.work .thumbs-slider.swiper', {
+        slidesPerView: 5,
+        spaceBetween: 18,
+        breakpoints: {
+            1200: {
+                spaceBetween: 10
+            },
+            1600: {
+                spaceBetween: 16
+            }
+        }
     })
+
+
+    const workSlider = new Swiper('.work .main-slider.swiper', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        },
+        navigation: {
+           prevEl: '.work .swiper-arrow-prev',
+           nextEl: '.work .swiper-arrow-next',
+        },
+        thumbs: {
+            swiper: thumbsWorkSlider
+        },
+        breakpoints: {
+            1200: {
+                spaceBetween: 20
+            }
+        }
+    });
+
+
 });
+
+
 
 function sliderClone(parent) {
     const allSlides = document.querySelectorAll(`.${parent} .swiper-slide`);

@@ -1,0 +1,59 @@
+---
+title: 'Страница | Проект'
+bodyClass: work-page
+---
+
+extends includes/_page
+include components/_breadcrumbs
+
+block main
+    +breadcrumbs('', 'Название проекта')
+    section.work
+        .container
+            .work__inner
+                h1 Название проекта
+                .work__card
+                    .work__card-images
+                        .main-slider.swiper
+                            .swiper-arrows
+                                .swiper-arrow-prev
+                                    +img('icon_arrow-triangle-left.svg')
+                                .swiper-arrow-next
+                                    +img('icon_arrow-triangle-right.svg')
+                            .swiper-wrapper
+                                .swiper-slide(data-fancybox='gallery' data-src='assets/images/work-1.jpg')
+                                    +img('work-1.jpg')
+                                .swiper-slide(data-fancybox='gallery' data-src='assets/images/work-1.jpg')
+                                    +img('work-1.jpg')
+                                .swiper-slide(data-fancybox='gallery' data-src='assets/images/work-1.jpg')
+                                    +img('work-1.jpg')
+                                .swiper-slide(data-fancybox='gallery' data-src='assets/images/work-1.jpg')
+                                    +img('work-1.jpg')
+                                .swiper-slide(data-fancybox='gallery' data-src='assets/images/work-1.jpg')
+                                    +img('work-1.jpg')
+                            .swiper-pagination
+                        .thumbs-slider.swiper
+                            .swiper-wrapper
+                                .swiper-slide
+                                    +img('work-1.jpg')
+                                .swiper-slide
+                                    +img('work-1.jpg')
+                                .swiper-slide
+                                    +img('work-1.jpg')
+                                .swiper-slide
+                                    +img('work-1.jpg')
+                                .swiper-slide
+                                    +img('work-1.jpg')
+                    .work__card-details
+                        ul.custom-list
+                            li <span>4</span> арочных шатра
+                            li <span>7</span> шатров пагода
+                            li <span>74</span> круглых стола со стульями
+                            li <span>5</span> палаток с едой
+                        div
+                            p На одной из городских площадок прошла ежегодная традиционная выставка-ярмарка товаров и услуг в Москве. Мероприятие проходило в районе Тимирязевский с 15 по 18 июля 2022 года.
+                            p Эта выставка-ярмарка предоставит уникальную возможность компаниям и предпринимателям из разных отраслей малого бизнеса демонстрировать свои продукты и услуги широкой аудитории. Посетители смогут познакомиться с последними тенденциями и инновациями в различных отраслях, включая сельсхое хозяйство, продукты питания, диетическое и лечебное питание, разные услуги, мебель и многое другое.
+                                |"Эта выставка-ярмарка представляет собой отличную возможность для бизнеса продемонстрировать продукцию и перечень услуг, а также установить новые контакты и партнерства," - сказал организатор мероприятия.
+                        a(href='javascript:void(0)').btn.btn--default Хочу так же!
+
+    include components/_seo
