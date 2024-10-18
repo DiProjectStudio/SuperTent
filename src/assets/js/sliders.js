@@ -65,13 +65,41 @@ $(document).ready(function() {
         }
     });
 
+
+    const thumbsProductSlider = new Swiper('.product .thumbs-slider.swiper', {
+        slidesPerView: 5,
+        spaceBetween: 18,
+        breakpoints: {
+            1200: {
+                spaceBetween: 10
+            },
+            1600: {
+                spaceBetween: 16
+            }
+        }
+    })
+
+
     const productSlider = new Swiper('.product .main-slider.swiper', {
         slidesPerView: 1,
+        spaceBetween: 10,
         loop: true,
         pagination: {
             el: ".swiper-pagination",
             clickable: true
         },
+        navigation: {
+           prevEl: '.product .swiper-arrow-prev',
+           nextEl: '.product .swiper-arrow-next',
+        },
+        thumbs: {
+            swiper: thumbsProductSlider
+        },
+        breakpoints: {
+            1200: {
+                spaceBetween: 20
+            }
+        }
     })
 });
 

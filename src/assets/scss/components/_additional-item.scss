@@ -1,0 +1,64 @@
+.additional__item {
+  &-image {
+    height: 120px;
+    margin-bottom: 6px;
+    border-radius: 4px;
+
+    @include breakpoint(md) {
+      height: 150px;
+      margin-bottom: 12px;
+      border-radius: 10px;
+    }
+
+    @include breakpoint(lg) {
+      height: 200px;
+    }
+  }
+
+  &-title {
+    font-size: 14px;
+    max-height: 34px;
+    min-height: 34px;
+    @include textLimit(2);
+    margin-bottom: 14px;
+
+    @include breakpoint(md) {
+      font-size: 16px;
+      max-height: 42px;
+      min-height: 42px;
+      margin-bottom: 12px;
+    }
+  }
+
+  &-price {
+    margin-bottom: 6px;
+
+    @include breakpoint(md) {
+      margin-bottom: 12px;
+    }
+
+    @include breakpoint(lg) {
+      margin-bottom: 15px;
+    }
+    span {
+      font-weight: 600;
+      color: $prime;
+      @include breakpoint(lg) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &-button {
+    width: 100%;
+    padding: 11px 0;
+    font-size: 14px;
+
+    @include breakpoint(md) {
+      font-size: 16px;
+      padding: 10px 24px;
+      width: fit-content;
+    }
+  }
+}
+

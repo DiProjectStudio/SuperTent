@@ -7,6 +7,7 @@ extends includes/_page
 include components/_breadcrumbs
 
 
+
 block main
     +breadcrumbs('', 'Шатры', 'Шатры быстросборные', 'Шатер Пагода 5x5')
     section.product
@@ -16,6 +17,11 @@ block main
                 .product__card
                     .product__card-images
                         .main-slider.swiper
+                            .swiper-arrows
+                                .swiper-arrow-prev
+                                    +img('icon_arrow-triangle-left.svg')
+                                .swiper-arrow-next
+                                    +img('icon_arrow-triangle-right.svg')
                             .swiper-wrapper
                                 .swiper-slide(data-fancybox='gallery' data-src='assets/images/product-image.jpg')
                                     +img('product-image.jpg')
@@ -25,14 +31,88 @@ block main
                                     +img('product-image.jpg')
                                 .swiper-slide(data-fancybox='gallery' data-src='assets/images/product-image.jpg')
                                     +img('product-image.jpg')
+                                .swiper-slide(data-fancybox='gallery' data-src='assets/images/product-image.jpg')
+                                    +img('product-image.jpg')
                             .swiper-pagination
-                        //.thumbs-slider.swiper
-                        //    .swiper-wrapper
-                        //        .swiper-slide
-                        //            +img('works-1.jpg')
-                        //        .swiper-slide
-                        //            +img('works-2.jpg')
-                        //        .swiper-slide
-                        //            +img('works-3.jpg')
-                        //        .swiper-slide
-                        //            +img('works-4.jpg')
+                        .thumbs-slider.swiper
+                            .swiper-wrapper
+                                .swiper-slide
+                                    +img('product-image.jpg')
+                                .swiper-slide
+                                    +img('product-image.jpg')
+                                .swiper-slide
+                                    +img('product-image.jpg')
+                                .swiper-slide
+                                    +img('product-image.jpg')
+                                .swiper-slide
+                                    +img('product-image.jpg')
+                    .product__card-details
+                        .details__title Комплектация
+                        .details__items
+                            -
+                                var detailsItems = [
+                                    {
+                                        name: 'Вместительность (чел.)',
+                                        details: 'до 8'
+                                    },
+                                    {
+                                        name: 'Площадь (м²)',
+                                        details: '16'
+                                    },
+                                    {
+                                        name: 'Форма в основании',
+                                        details: 'квадрат'
+                                    },
+                                    {
+                                        name: 'Размер (м)',
+                                        details: '4 х 4 х 4,5'
+                                    },
+                                    {
+                                        name: 'Ткань',
+                                        details: 'архитектурная ПВХ'
+                                    },
+                                    {
+                                        name: 'Каркас',
+                                        details: 'сталь оцинкованная / окрашенная'
+                                    },
+                                ]
+
+                            each detailsItem in detailsItems
+                                .details__item
+                                    .item__name= `${detailsItem.name}:`
+                                    .item__details= detailsItem.details
+
+                        .details__price
+                            p <span>10000 ₽</span> / за день
+                            p <span>7000 ₽</span> / со 2-го дня
+                        .details__button
+                            a(href='javascript:void(0)').btn.btn--default Оставить заявку
+                .product__about
+                    .product__about-title.section-title Описание
+                    .product__about-description Тент «Пагода», изготовленный из прочной, водонепроницаемой ткани, легко собирается и разбирается. Для его установки не требуется много времени, а благодаря продуманной конструкции тента, он может быть установлен в любом месте. Это отличное место для: - организации выездных семинаров и конференций; - торговых ярмарок; - проведения выставок; - семейных торжеств; - деловых встреч. При этом, как и все быстромонтируемые конструкции, шатры «Пагода» отличаются повышенной надёжностью.
+    section.additional
+        .container
+            .additional__inner
+                .additional__title.section-title Дополнительно
+                .additional__filter
+                    -
+                        var filterItems = [
+                            {name: 'Напольное покрытие'},
+                            {name: 'Брендирование'},
+                            {name: 'Декорирование'},
+                            {name: 'Освещение'},
+                            {name: 'Климатическое оборудование'},
+                            {name: 'Электропитание'},
+                            {name: 'Безопасность'},
+                        ]
+
+                    each filterItem in filterItems
+                        .filter__item
+                            span= filterItem.name
+                .additional__grid
+                    - var n = 0;
+                    while n < 8
+                        include components/_additional-item
+                        - n++;
+
+    include components/_seo
